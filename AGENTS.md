@@ -52,7 +52,7 @@ when behavior, release contents, or the consumer contract changes.
 ## Ownership and configuration
 
 The coordinator explicitly assigns a bounded Branding writer; there is no new
-standing Branding role. The existing `mishkal_webapp` role covers assigned Website
+standing Branding role. The existing `phioon_webapp` role covers assigned Website
 or Webapp frontend work and does not confer Branding write access. Approved
 identity rules govern consumer visuals; Creative Tim discovery and local templates
 guide consumer composition only. See [frontend guidance](../bknd/docs/agent-workflow.md#frontend-and-brand-guidance).
