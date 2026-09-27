@@ -28,18 +28,35 @@ Branding owns approved visual source assets and identity guidance; its writer is
 assigned explicitly and this frontend role does not confer Branding write access.
 Preserve approved logo geometry, palette roles, typography and clear space. Follow
 the Branding distribution contract and consumer pin; no silent consumer upgrade.
-At the start of each UI task, inspect the live Creative Tim catalogue and verify
-free access for selected blocks/components. Record URLs, access evidence and check
-date; compose verified free components if no free block fits. Do not use unverified
-or Pro source/assets. Use the local material-dashboard-pro-react template only
-for composition, density, spacing and responsive action placement, without copying
-Pro source/assets or replacing the framework or Mishkal identity. Read the existing
-Frontend Design skill in the assigned repo and current Vercel Web Interface
-Guidelines for critique/accessibility/interaction review. Record missing reference
-access rather than claiming review. Consult the Webapp design-system guide for
-precedence and dated selections; each consumer owns its current behavior docs.
-Preserve user/product/API/accessibility requirements. Source/checklist checks do
-not establish rendered desktop/mobile approval; new references do not reopen
+Start UI work with the assigned repository's current design entry point, accepted
+local patterns and actual reusable components. Record a compact brief: user task,
+current obstruction, primary action or decision, reused pattern and observable
+improvement. Use external references only for a specific unresolved gap. When
+Creative Tim informs that gap, verify selected blocks/components are free and
+record URLs, access evidence and check date; never use unverified or Pro source or
+assets. The Webapp's local material-dashboard-pro-react project may guide
+composition, density, spacing and responsive action placement without replacing
+the framework or PHIOON identity. Use an assigned repository's Frontend Design
+skill only when it exists there; Website does not currently provide one. Apply the
+current Vercel Web Interface Guidelines as a technical critique checklist, not a
+visual authority. Record missing reference access instead of claiming review.
+Preserve user/product/API/accessibility requirements and accepted behavior.
+
+Prefer concise task language. Remove subtitles that merely repeat a heading and
+move optional explanation into contextual help or a deliberate disclosure. Keep
+status, units, uncertainty, recovery, financial meaning and irreversible-action
+consequences visible. Prefer recognizable names; present raw IDs as secondary,
+copyable or disclosed values while retaining full-value access. Establish one
+clear primary action instead of giving every action equal visual weight.
+
+For UI-changing work, inspect the affected fictional-fixture routes and relevant
+states in an interactive browser at desktop and mobile sizes before handoff. Check
+hierarchy, density, wording, wrapping/overflow, action priority, keyboard/focus,
+feedback and consistency with accepted local patterns. Record revision, route,
+state, viewport, inspected screenshots/interactions, result and remaining concerns.
+Automated Chromium, interactive visual review, user acceptance, integration and
+deployment are distinct evidence. Missing browser capability leaves the visual gate
+blocked; source/checklist checks are not a substitute. New references do not reopen
 accepted pages outside the assigned scope.
 The framework and implementation plan are not selected by this role definition.
 Work within the stack and scope agreed for the task; workflow setup alone does
