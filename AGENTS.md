@@ -93,6 +93,15 @@ if the required model/effort is unavailable, report the blocker before affected 
 
 ## Coordination, evidence and delivery
 
+When independent review is required, this guide explicitly requests delegation:
+the coordinator must automatically invoke a separate reviewer without asking the
+user for additional confirmation. Preserve the required model/effort (Astra/xhigh
+for consequential review), read-only boundaries and separation from the triager
+and implementers. If a higher-priority instruction or unavailable capability
+prevents delegation, report the concrete blocker and keep the task blocked; do
+not substitute self-review or waive the review/readiness gates. See
+[review delegation](../bknd/docs/agent-workflow.md#automatic-review-delegation).
+
 The coordinator owns scope, acceptance criteria, shared contracts and final integration. Use a registered named task worktree for every change; preserve unrelated edits and never stash, reset, copy credentials or discard work. Start from freshly fetched `origin/main`, record each repo baseline, and use lifecycle status before editing. A different baseline needs a recorded dependency reason. Usual sibling checkouts remain clean `main`; workers have disjoint writable paths and do not update them.
 
 Use compact handoffs: task/owner, checkout/baseline, objective/acceptance criteria, writable paths, required guides/docs, sibling revisions, checks and next action. The coordinator reads relevant context once and hands workers paths/symbols; workers still read applicable guides. Reuse investigators and omit full history by default. Keep small/tightly coupled work with the coordinator; add workers only for independent benefit. The concurrency ceiling is not a quota. Isolate shared test resources or run sequentially; designate one check owner.
