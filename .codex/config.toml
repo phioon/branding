@@ -1,4 +1,4 @@
-# Managed Mishkal agent defaults; canonical source: bknd/.codex/config.toml
+# Managed PHIOON agent defaults; canonical source: bknd/.codex/config.toml
 model = "gpt-5.6-sol"
 model_reasoning_effort = "medium"
 

@@ -17,6 +17,10 @@
 
 ## Unreleased
 
+- Add the canonical `phioon_*` Codex roles while retaining bounded `mishkal_*`
+  aliases for mixed-version clients. Update the managed defaults header and
+  repository guidance; artwork, brand version and web distribution are unchanged.
+
 - Replace `brand-kit` GitHub Actions with coordinator-run Python 3.12 manifest,
   source and distribution checks at the final clean task commit. Preserve review
   and other protection-template controls; remote configuration is separate.
