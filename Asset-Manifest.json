@@ -18,8 +18,8 @@
     },
     {
       "path": ".codex/agents/mishkal_reviewer.toml",
-      "bytes": 3337,
-      "sha256": "cf26caaa834e0cce547140c421108167ab33ad955299c66406e737042dd244df"
+      "bytes": 4758,
+      "sha256": "9443d3e1c448723a4ae4c69d84bb4365d8da82811fb4f3b8b03e391ee04109df"
     },
     {
       "path": ".codex/agents/mishkal_terminal.toml",
@@ -33,8 +33,8 @@
     },
     {
       "path": ".codex/agents/mishkal_webapp.toml",
-      "bytes": 5511,
-      "sha256": "2926f5e8161d66640e8b2965de2e7b69148636ac7a1fc606b0304d7ff728ad87"
+      "bytes": 6703,
+      "sha256": "a1c30b1f84eb72a9bd969315dd1b2b091a432abc09a3b284593ad0cc7aaea3ad"
     },
     {
       "path": ".codex/agents/phioon_backend.toml",
@@ -48,8 +48,8 @@
     },
     {
       "path": ".codex/agents/phioon_reviewer.toml",
-      "bytes": 3335,
-      "sha256": "c036feda49f4c091c77739d5daafcd90be8c79584f6be305250508d34c6ae2d5"
+      "bytes": 4756,
+      "sha256": "a5041a8c2beb0e312c80765bd36768a760480fa01fa82feac72e8325f5c94e85"
     },
     {
       "path": ".codex/agents/phioon_terminal.toml",
@@ -63,8 +63,8 @@
     },
     {
       "path": ".codex/agents/phioon_webapp.toml",
-      "bytes": 5508,
-      "sha256": "6b812f39c0cc3574481b75a094c9bf4cb7ac8c72d6f227f1c7407b187731d79e"
+      "bytes": 6700,
+      "sha256": "f7e47aaa0e95b53b73620e158fbec4972b653b558619a683be4f64e6e1f2fde9"
     },
     {
       "path": ".codex/config.toml",
@@ -93,8 +93,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 10247,
-      "sha256": "a9aed7e7f4aaf682a7c25ab233041f21882e17f732a5087df79cab14a7bde336"
+      "bytes": 10246,
+      "sha256": "88faa1370f313d853fc77e573247269a60e7f893eaad4524cb351ca6c5a90a76"
     },
     {
       "path": "CHANGELOG.md",
