@@ -46,8 +46,9 @@ python3 scripts/brand_distribution.py check-source
 python3 -m unittest discover -s tests -v
 ```
 
-Update `README.md`, `CHANGELOG.md`, and the relevant document under `docs/`
-when behavior, release contents, or the consumer contract changes.
+Update the affected `_docs` guidance when behavior, release contents or consumer
+contracts change. Existing local guides/changelog remain migration debt; retain
+release metadata consumed by tools with its concrete consumer justification.
 
 ## Ownership and configuration
 
@@ -114,7 +115,27 @@ Report implementation, checks, review, push/PR readiness, merge, deployment and 
 
 ## Documentation completion gate
 
-For code, configuration, tests, examples or layout changes, read applicable guides, identify authoritative docs/sibling consumers, search affected symbols and update current contracts/examples/navigation with behavior. Preserve and label history/plans and generated/frozen artifacts; do not hide a discrepancy by rewriting a requirement. Before handoff, review the complete task diff against baseline, distinguish existing edits and safely check affected links/examples/commands. The integrator owns this across repos. Report `Documentation: Updated` with paths/checks, `None` with reviewed paths/reason, or `Pending` with missing action/evidence. Missing sibling/runtime evidence is a gap, never proof. Avoid no-op doc edits.
+`_docs` owns all authored project documentation, including technical references,
+plans and history. Follow the [documentation policy](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/documentation-policy.md). Keep only minimal
+README/AGENTS entry points and necessary software artifacts here; each additional
+local exception needs an owner, concrete reason and software consumer. Existing
+local documents are migration debt and remain authoritative until their reviewed
+migration; technical depth alone is never an exemption.
+
+For each task, review the affected feature's existing pages and relevant source,
+not the entire documentation library. Update existing pages when behavior,
+interfaces, supported limits, configuration or operating instructions change.
+Cosmetic/internal changes may record a specific reviewed `none` rationale. For
+example, `max_size` needs a documentation update only when it changes a limit a
+reader needs to know. No-op edits and new pages for every PR or phase are not required.
+
+Record the feature, impact, scoped rationale, exact code/docs references and
+concrete `_docs` targets through the structured lifecycle. The independent
+reviewer checks missing guidance and unnecessary detail. Report `Documentation:
+Updated`, `None` or `Pending` consistently with that evidence. Keep substantial
+working notes in one feature folder, consolidate useful history into records at
+closeout and preserve evidence. Code/docs integration, deployment and archival
+remain separate; publication or a passing link check is not completion.
 
 ## Review focus
 
