@@ -1,4 +1,4 @@
-# Verification record: PHIOON identity 1.0 / distribution 2.0.0
+# Verification record: PHIOON identity 1.0 / proposed distribution 3.0.0
 
 23 September 2026. The artwork checks below are the supplied identity author's
 record, preserved from input commit `a2154f5128b3715162a61d1ebc78b11c44d55c71`;
@@ -23,7 +23,11 @@ The browser favicon intentionally uses the supplied white-on-Deep-Navy design.
 Semantic tokens have no font-loading side effects; optional local font loading
 remains in `font-faces.css`. All fonts and matching SIL licenses are present
 outside the legacy archive. The generated manifests identify distribution
-2.0.0 and visual identity 1.0.
+3.0.0 and visual identity 1.0 with canonical producer/lock identity
+`phioon/branding`. The 3.0.0 preparation preserves every distributed asset byte
+and consumer destination path from 2.0.0, the artwork source revision and frozen
+1.1.0 manifest. Website/Webapp verifier and lock adoption remains pending in
+separate consumer tasks; no tag or release is established by these source checks.
 
 Run after all source/docs/test changes:
 
@@ -35,7 +39,8 @@ python3 -m unittest discover -s tests -v
 ```
 
 Tests cover deterministic manifests, licensed fonts, side-effect-free tokens,
-idempotent sync, exact committed locks, read-only checking, legacy filename
+idempotent sync, canonical provenance, exact committed locks, rejection of other
+repository identities, read-only checking, legacy filename
 retirement and refusal of modified/unknown legacy entries, symlinks and invalid
 topology before any write. Legacy migration uses a frozen checksummed allowlist,
 never the removed archive folder.

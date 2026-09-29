@@ -16,7 +16,8 @@ import sys
 import tempfile
 
 
-RELEASE_VERSION = "2.0.0"
+RELEASE_VERSION = "3.0.0"
+REPOSITORY = "phioon/branding"
 SCHEMA_VERSION = 1
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_MANIFEST = ROOT / "Asset-Manifest.json"
@@ -145,7 +146,7 @@ def web_manifest() -> dict:
         "selfHash": False,
         "provenance": {
             "browserFavicons": {
-                "repository": "mishkal-ai/branding",
+                "repository": REPOSITORY,
                 "revision": ARTWORK_SOURCE_REVISION,
                 "treatment": "white optical symbol on Deep Navy",
                 "paths": [
@@ -275,7 +276,7 @@ def _source_revision() -> str:
 def consumer_lock(manifest: dict) -> dict:
     return {
         "schemaVersion": 1,
-        "repository": "mishkal-ai/branding",
+        "repository": REPOSITORY,
         "version": manifest["version"],
         "revision": _source_revision(),
         "webDistributionSha256": _digest(WEB_MANIFEST)[1],

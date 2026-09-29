@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.0 - Proposed
+
+- Change generated provenance and new consumer locks to canonical repository
+  identity `phioon/branding`. This incompatible verifier contract requires a
+  major distribution version; visual identity remains 1.0 and schema remains 1.
+- Preserve all distributed artwork/font/token bytes, destination paths, artwork
+  source revision and the frozen 1.1.0 retirement manifest. Historical 2.0.0
+  distributions are unchanged; the old identity remains accepted only for
+  checksum-verified 1.1.0 filename retirement.
+- Website/Webapp verifier and lock adoption remains separately pending. Source
+  preparation does not create a tag/release or sync/deploy consumers.
+
 ## 2.0.0 - 2026-09-23
 
 - Adopt supplied PHIOON visual identity 1.0 without altering artwork bytes.

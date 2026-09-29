@@ -1,6 +1,6 @@
 # Web distribution contract
 
-`Web-Distribution.json` is the approved web subset of PHIOON web distribution 2.0.0 (visual identity 1.0). Schema
+`Web-Distribution.json` is the approved web subset of proposed PHIOON web distribution 3.0.0 (visual identity 1.0). Schema
 version 1 records the release `version`, deterministic `order`, `selfHash`
 policy, exact artifact `provenance`, managed consumer paths, and sorted file
 records containing source `path`, `consumerPath`, `bytes`, and SHA-256.
@@ -14,8 +14,12 @@ preserved. Consumer paths are a contract: coordinate changes with consumers.
 
 The kit follows semantic versioning: incompatible consumer-path or contract
 changes require a major version; additive approved assets/features use a minor
-version; compatible corrections use a patch version. Release `2.0.0` is named
-`v2.0.0` in Git tags/releases. A published version/tag must not be retargeted;
+version; compatible corrections use a patch version. Proposed release `3.0.0`
+changes producer/lock repository identity to `phioon/branding`, which requires
+consumer verifier updates and therefore a major version. Artwork bytes, managed
+consumer paths, schema 1 and the artwork source revision remain unchanged from
+2.0.0. The planned tag name is `v3.0.0`; source preparation creates neither a tag
+nor a release. A published version/tag must not be retargeted;
 corrections require a new version. The lock records the version without the `v`
 prefix and binds the full commit, not a mutable branch or tag name.
 
@@ -34,7 +38,7 @@ that maintenance; actual release/consumer changes follow the procedure below.
 3. Run the three checks in `docs/Verification.md` and inspect the complete diff.
 4. Publish the reviewed task through the repository lifecycle. After the user
    merges it, verify the clean release commit and its checks. Only when separately
-   authorized, create the immutable `v2.0.0` tag and release at that exact commit;
+   authorized, create the immutable `v3.0.0` tag and release at that exact commit;
    record its commit and `Web-Distribution.json` SHA-256 in the release notes.
 5. In a separately authorized consumer task, acquire that committed source,
    run `sync`, review the assets and lock diff together, update consumer-owned
@@ -53,8 +57,8 @@ Sync writes a deterministic root `brand.lock.json` after copying the assets:
 ```json
 {
   "schemaVersion": 1,
-  "repository": "mishkal-ai/branding",
-  "version": "2.0.0",
+  "repository": "phioon/branding",
+  "version": "3.0.0",
   "revision": "<full Branding commit>",
   "webDistributionSha256": "<SHA-256 of exact Web-Distribution.json bytes>"
 }
@@ -80,10 +84,18 @@ it rejects a symlink or unsupported lock entry before any asset writes. Review
 the version, revision, checksum and asset changes together. An empty new commit
 still changes the lock revision even when its manifest checksum is identical.
 
+Website and Webapp adoption of 3.0.0 is pending separately: their existing
+validators accept the historical repository identity and must be updated before
+new locks are adopted. The current checker accepts only the canonical identity
+for a current lock. Existing 2.0.0 locks remain bound to their original committed
+source and checker; this change does not rewrite historical distributions or
+grant the new checker permission to accept arbitrary repository identities.
+The 1.1.0 identity is retained only for the bounded retirement preflight below.
+
 ## Consumer-local verification
 
 Consumer local verification must acquire the locked source from the trusted
-public `mishkal-ai/branding` repository through anonymous Git acquisition;
+public `phioon/branding` repository through anonymous Git acquisition;
 no dedicated cross-repository credential or Actions run is required.
 Read `revision` from the committed consumer lock, require a full lowercase
 40- or 64-character hexadecimal commit, and check out that exact commit in a
@@ -136,13 +148,16 @@ a transaction rolling back unrelated I/O failures during sync.
 
 ## Migration from 1.1.0
 
-Version 2.0.0 changes managed asset filenames to `phioon-*` and tokens to
+Version 2.0.0 changed managed asset filenames to `phioon-*` and tokens to
 `--phioon-*`. It keeps the schema version and destination roots unchanged.
 The `visualIdentityVersion` manifest field distinguishes the supplied visual
-identity 1.0 from the incompatible distribution release 2.0.0. The provenance
+identity 1.0 from the distribution version. Proposed 3.0.0 preserves those paths
+and tokens and supports the same bounded 1.1.0 retirement. The provenance
 record identifies the preserved PHIOON input commit and its white-on-Deep-Navy
-browser favicons. Operational repository coordinates remain
-`mishkal-ai/branding`.
+browser favicons under canonical repository identity `phioon/branding`; its
+artwork source revision remains `a2154f5128b3715162a61d1ebc78b11c44d55c71`.
+That repository value identifies the renamed current location of the preserved
+artwork; historical 2.0.0 manifest and lock bytes retain their original identity.
 
 `scripts/legacy-web-distribution-1.1.0.json` is the frozen previous allowlist,
 including checksums. It is migration metadata, not a dependency on an archived
