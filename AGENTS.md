@@ -20,7 +20,8 @@ is not automatically loaded in a standalone clone.
   in `font-faces.css` and consumers may choose their own loading mechanism.
 - Change the web allowlist in `scripts/brand_distribution.py` deliberately.
   Consumer paths are a contract; coordinate their changes with every consumer.
-- Distribution 2.0.0 uses PHIOON filenames/tokens and visual identity 1.0.
+- Proposed distribution 3.0.0 uses `phioon/branding` producer/lock identity and
+  preserves distribution 2.0.0's PHIOON filenames/tokens and visual identity 1.0.
   The frozen 1.1.0 manifest grants only checksum-verified retirement of its old
   managed filenames during sync. Never broaden it to delete unknown files.
 - Regenerate both manifests after release-file changes, then run the complete

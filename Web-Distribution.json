@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "name": "PHIOON approved web distribution",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "visualIdentityVersion": "1.0",
   "order": "path (ascending Unicode code point order)",
   "selfHash": false,
   "provenance": {
     "browserFavicons": {
-      "repository": "mishkal-ai/branding",
+      "repository": "phioon/branding",
       "revision": "a2154f5128b3715162a61d1ebc78b11c44d55c71",
       "treatment": "white optical symbol on Deep Navy",
       "paths": [

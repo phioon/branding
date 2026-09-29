@@ -1,11 +1,14 @@
 # Repository controls
 
-The current release is PHIOON visual identity 1.0 / web distribution 2.0.0.
+The proposed source release is PHIOON visual identity 1.0 / web distribution 3.0.0.
 The incompatible consumer upgrade is governed by [Distribution](Distribution.md).
 Artwork and fonts are self-contained at the root; no script, build or check may
 depend on the optional legacy `mishkal/` archive. The frozen 1.1.0 manifest under
 `scripts/` is retained solely to validate retirement of old consumer filenames.
-Repository and GitHub organization coordinates remain `mishkal-ai/branding`.
+Generated provenance and new locks use the canonical repository `phioon/branding`.
+Distribution 2.0.0 remains immutable history. The proposed 3.0.0 contract changes
+producer identity only; consumer verifier and lock adoption are separate pending
+Website/Webapp tasks. No tag or release is created by source preparation.
 
 [AGENTS.md](../AGENTS.md) carries the standalone triage, model, independent-review,
 registered-worktree, publication and documentation gates. The coordinator assigns
@@ -52,7 +55,7 @@ completed local-profile transition. Do not overwrite newer remote controls:
 
 ```sh
 gh api --method PUT \
-  repos/mishkal-ai/branding/branches/main/protection \
+  repos/phioon/branding/branches/main/protection \
   --input .github/main-protection.json
 ```
 

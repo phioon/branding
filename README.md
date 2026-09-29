@@ -1,4 +1,4 @@
-# PHIOON visual identity 1.0 / web distribution 2.0.0
+# PHIOON visual identity 1.0 / proposed web distribution 3.0.0
 
 Refined from the selected **01 — Original, preserved** direction, 23 September 2026.
 
@@ -69,8 +69,11 @@ Distribution 2.0.0 intentionally changes asset filenames, CSS token names,
 minimum logo sizes and browser favicon treatment. Browser/app/touch icons now
 use the supplied white-on-Deep-Navy treatment. Website and Webapp must update
 their own text, metadata, layouts and asset references alongside the assets.
-Repository coordinates remain `mishkal-ai/branding`; rebranding does not rename
-repositories, domains, environment variables or persistent identifiers.
+Proposed distribution 3.0.0 changes generated provenance and consumer-lock
+repository identity to `phioon/branding`. It preserves distribution 2.0.0's
+artwork bytes, managed asset paths and schema 1. The identity change requires
+consumer verifier updates before adoption; Website and Webapp adoption remains
+pending in separate tasks. This source preparation does not create a tag or release.
 
 From a clean committed Branding release:
 

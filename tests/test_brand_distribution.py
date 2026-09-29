@@ -64,6 +64,7 @@ class BrandDistributionTests(unittest.TestCase):
         distribution.generate(check=True)
         manifest = distribution.check_source()
         paths = [entry["path"] for entry in manifest["files"]]
+        self.assertEqual(len(paths), 27)
         self.assertEqual(paths, sorted(paths))
         self.assertEqual(len(paths), len(set(paths)))
         self.assertFalse(manifest["selfHash"])
@@ -82,6 +83,18 @@ class BrandDistributionTests(unittest.TestCase):
             distribution._digest(ROOT / distribution.LEGACY_MANIFEST_PATH)[1],
             distribution.LEGACY_MANIFEST_SHA256,
         )
+
+    def test_canonical_producer_preserves_artwork_provenance(self):
+        manifest = distribution.web_manifest()
+        self.assertEqual(manifest["schemaVersion"], 1)
+        self.assertEqual(manifest["version"], "3.0.0")
+        self.assertEqual(manifest["visualIdentityVersion"], "1.0")
+        self.assertEqual(manifest["provenance"]["browserFavicons"], {
+            "repository": "phioon/branding",
+            "revision": "a2154f5128b3715162a61d1ebc78b11c44d55c71",
+            "treatment": "white optical symbol on Deep Navy",
+            "paths": ["icons/favicon.ico", "icons/favicon.svg"],
+        })
 
     def legacy_fixture(self, root):
         retired = distribution._retired_files(distribution.web_manifest())
@@ -114,6 +127,26 @@ class BrandDistributionTests(unittest.TestCase):
                 self.assertEqual(before, self.snapshot(root))
             self.assertFalse(any((root / path).exists() for path in retired))
             self.assertEqual(source_note.read_bytes(), b"consumer-owned")
+            lock = json.loads((root / distribution.CONSUMER_LOCK).read_bytes())
+            self.assertEqual(lock["repository"], "phioon/branding")
+            self.assertEqual(lock["version"], "3.0.0")
+
+    def test_retirement_rejects_other_repository_identities_before_writes(self):
+        # The historical identity is accepted only with the frozen 1.1.0
+        # contract; the current identity cannot authorize historical deletion.
+        for repository in ("phioon/branding", "other/branding", "https://github.com/mishkal-ai/branding"):
+            with self.subTest(repository=repository), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                retired = self.legacy_fixture(root)
+                lock_path = root / distribution.CONSUMER_LOCK
+                lock = json.loads(lock_path.read_bytes())
+                lock["repository"] = repository
+                lock_path.write_bytes(distribution._json_bytes(lock))
+                before = self.snapshot(root)
+                with mock.patch.object(distribution, "_retired_files", return_value=retired):
+                    with self.assertRaisesRegex(distribution.VerificationError, "approved 1.1.0"):
+                        distribution.sync_consumer(root)
+                self.assertEqual(before, self.snapshot(root))
 
     def test_legacy_modified_or_unrecognized_entries_refuse_all_writes(self):
         for kind in ("modified", "symlink", "directory", "extra", "lock", "missing-lock", "list-lock"):
@@ -385,11 +418,68 @@ class BrandDistributionTests(unittest.TestCase):
             lock = json.loads((root / distribution.CONSUMER_LOCK).read_bytes())
             self.assertEqual(lock, {
                 "schemaVersion": 1,
-                "repository": "mishkal-ai/branding",
-                "version": "2.0.0",
+                "repository": "phioon/branding",
+                "version": "3.0.0",
                 "revision": "a" * 40,
                 "webDistributionSha256": distribution._digest(distribution.WEB_MANIFEST)[1],
             })
+
+    def test_current_lock_rejects_legacy_and_arbitrary_repository_identities(self):
+        for repository in ("mishkal-ai/branding", "other/branding", "https://github.com/phioon/branding"):
+            with self.subTest(repository=repository), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                distribution.sync_consumer(root)
+                lock_path = root / distribution.CONSUMER_LOCK
+                lock = json.loads(lock_path.read_bytes())
+                lock["repository"] = repository
+                lock_path.write_bytes(distribution._json_bytes(lock))
+                before = self.snapshot(root)
+                with self.assertRaisesRegex(distribution.VerificationError, "mismatched.*brand.lock.json"):
+                    distribution.check_consumer(root)
+                self.assertEqual(before, self.snapshot(root))
+
+    def test_v2_upgrade_changes_only_lock_and_preserves_consumer_note(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            distribution.sync_consumer(root)
+            source_note = root / "public/brand/SOURCE.md"
+            source_note.write_bytes(b"consumer-owned provenance\n")
+            lock_path = root / distribution.CONSUMER_LOCK
+            # Version 2 had identical assets but the old producer identity and
+            # its own exact manifest checksum. Reconstruct that manifest here.
+            previous_manifest = distribution.web_manifest()
+            previous_manifest["version"] = "2.0.0"
+            previous_manifest["provenance"]["browserFavicons"]["repository"] = "mishkal-ai/branding"
+            previous_manifest_hash = hashlib.sha256(
+                distribution._json_bytes(previous_manifest)
+            ).hexdigest()
+            # Frozen 2.0.0 manifest at baseline 257dabfa: all 27 file hashes,
+            # sizes, source/destination paths and managed roots are preserved.
+            self.assertEqual(previous_manifest_hash,
+                             "41615fb2fce0c0f36dd630248fa42ad2550c110226b5d1d5b32ca938f41440c4")
+            previous_lock = {
+                "schemaVersion": 1,
+                "repository": "mishkal-ai/branding",
+                "version": "2.0.0",
+                "revision": "b" * 40,
+                "webDistributionSha256": previous_manifest_hash,
+            }
+            lock_path.write_bytes(distribution._json_bytes(previous_lock))
+            before = self.snapshot(root)
+            with self.assertRaisesRegex(distribution.VerificationError, "mismatched.*brand.lock.json"):
+                distribution.check_consumer(root)
+            self.assertEqual(before, self.snapshot(root))
+            distribution.sync_consumer(root)
+            distribution.check_consumer(root)
+            after = self.snapshot(root)
+            for relative in (*distribution.WEB_PATHS.values(), "public/brand/SOURCE.md"):
+                self.assertEqual(before[relative], after[relative])
+            self.assertNotEqual(before[distribution.CONSUMER_LOCK], after[distribution.CONSUMER_LOCK])
+            lock = json.loads(lock_path.read_bytes())
+            self.assertEqual(lock["repository"], "phioon/branding")
+            self.assertEqual(lock["version"], "3.0.0")
+            distribution.sync_consumer(root)
+            self.assertEqual(after, self.snapshot(root))
 
     def test_check_rejects_invalid_lock_and_sync_repairs_it(self):
         for kind in ("absent", "malformed", "schemaVersion", "repository", "version", "revision",
@@ -527,6 +617,9 @@ class CommittedSourceTests(unittest.TestCase):
             )
         lock = json.loads((self.consumer / distribution.CONSUMER_LOCK).read_bytes())
         first_revision = self.git("rev-parse", "HEAD")
+        self.assertEqual(lock["repository"], "phioon/branding")
+        self.assertEqual(lock["version"], "3.0.0")
+        self.assertEqual(lock["webDistributionSha256"], distribution._digest(distribution.WEB_MANIFEST)[1])
         self.assertEqual(lock["revision"], first_revision)
         self.git("commit", "--quiet", "--allow-empty", "-m", "Next test revision")
         with self.assertRaisesRegex(distribution.VerificationError, "mismatched.*brand.lock.json"):
