@@ -34,7 +34,7 @@ is not automatically loaded in a standalone clone.
 
 ## Required checks
 
-Before task readiness, the coordinator runs the fixed Python 3.12
+For every Branding task, the coordinator runs the full Python 3.12
 [Branding local profile](../bknd/docs/agent-workflow.md#branding-local-verification)
 with `verify-local --repo branding` at the final clean committed task HEAD.
 It executes all three commands below and records generated identity-bound evidence;
@@ -54,90 +54,58 @@ release metadata consumed by tools with its concrete consumer justification.
 ## Ownership and configuration
 
 The coordinator explicitly assigns a bounded Branding writer; there is no new
-standing Branding role. The existing `phioon_webapp` role covers assigned Website
-or Webapp frontend work and does not confer Branding write access. Approved
+standing Branding role. The existing `phioon_webapp` role covers assigned Website,
+Webapp or Admin web work and does not confer Branding write access. Approved
 identity rules govern consumer visuals; Creative Tim discovery and local templates
 guide consumer composition only. See [frontend guidance](../bknd/docs/agent-workflow.md#frontend-and-brand-guidance).
 Managed `.codex/` files come from `bknd/.codex/` through the
 [configuration workflow](../bknd/docs/agent-workflow.md#configuration-and-discovery).
 Do not edit copies independently or overwrite conflicting custom settings.
 
-## Initial triage
 
-Use Astra/xhigh for independent consequential review. Ordinary triage stays
-Astra/high; architecture decisions, cross-repository contract reasoning and unclear
-recovery root causes require Astra/xhigh. A fixed loaded role cannot be upgraded
-by a prompt: use an explicit Astra/xhigh default agent with the complete role
-instructions and read-only boundaries, or report the unavailable prerequisite.
-Follow the [shared model policy](../bknd/docs/model-policy.md) for dated official-guidance checks, measured trials
-and reviewed model upgrades; never silently select a newly released model.
+Branding always retains its complete profile: the asset manifest hashes governance
+and managed `.codex` files too. Regenerate it after those edits; the sibling
+instruction-only lightweight route does not apply here. No brand version, artwork
+or consumer-pin change follows from workflow maintenance.
 
+## Shared delivery checklist
 
-Before implementation, invoke triage (Astra/high ordinarily; Astra/xhigh for complex cases above)
-for every new feature,
-cross-repo change, unclear bug or consequential execution, risk, protocol,
-persistent-state, recovery, workflow-authority, security or destructive-tooling
-change. Uncertainty requires triage. Only narrow, obvious, non-consequential edits
-may bypass it; record the reason. Small implementation tasks may still stay with
-the coordinator after triage or a justified bypass.
+Follow [proportionate delivery](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/proportionate-delivery.md)
+for routing, finite acceptance, check selection and stopping conditions. It owns
+those decisions; local check/design pages retain their command and evidence mechanics.
 
-The coordinator records and accepts a concise brief within the user's authorized
-scope: source evidence/assumptions, acceptance criteria, repositories/contracts,
-write owners, models/effort, checks/docs and escalation conditions. Keep routine
-coordination on Sol/medium and consequential implementers on Astra/high regardless
-of a cheaper recommendation. Workers follow the brief but challenge conflicting
-evidence; pause affected implementation and return material discoveries for
-retriage. Independent consequential review must use a different agent from the
-triager and implementers and challenge both plan and diff. Triage cannot waive
-existing gates. If the custom role is unavailable, use an explicitly assigned
-read-only Astra agent with high for ordinary triage or xhigh for complex triage;
-if the required model/effort is unavailable, report the blocker before affected implementation.
-
-## Coordination, evidence and delivery
-
-When independent review is required, this guide explicitly requests delegation:
-the coordinator must automatically invoke a separate reviewer without asking the
-user for additional confirmation. Preserve the required model/effort (Astra/xhigh
-for consequential review), read-only boundaries and separation from the triager
-and implementers. If a higher-priority instruction or unavailable capability
-prevents delegation, report the concrete blocker and keep the task blocked; do
-not substitute self-review or waive the review/readiness gates. See
-[review delegation](../bknd/docs/agent-workflow.md#automatic-review-delegation).
-
-The coordinator owns scope, acceptance criteria, shared contracts and final integration. Use a registered named task worktree for every change; preserve unrelated edits and never stash, reset, copy credentials or discard work. Start from freshly fetched `origin/main`, record each repo baseline, and use lifecycle status before editing. A different baseline needs a recorded dependency reason. Usual sibling checkouts remain clean `main`; workers have disjoint writable paths and do not update them.
-
-Use compact handoffs: task/owner, checkout/baseline, objective/acceptance criteria, writable paths, required guides/docs, sibling revisions, checks and next action. The coordinator reads relevant context once and hands workers paths/symbols; workers still read applicable guides. Reuse investigators and omit full history by default. Keep small/tightly coupled work with the coordinator; add workers only for independent benefit. The concurrency ceiling is not a quota. Isolate shared test resources or run sequentially; designate one check owner.
-
-Choose Sol medium for routine coordination/implementation, Terra low (builtin explorer model) for focused read-only exploration, and Astra high for consequential execution, risk, protocol, persistent-state, recovery, workflow-authority, security or destructive-tooling analysis/implementation; independently review those changes with Astra xhigh. Ultra needs explicit exceptional escalation. Do not stop unfinished requirements for budget. After repeated failed approaches, preserve evidence and escalate the blocker or request runtime evidence. Where telemetry exists, measure usage per accepted PR; do not equate tokens with billed credits or promise savings.
-
-Reuse a check only for its unchanged exact SHA, environment and command; required CI and independent review remain required. Finish source/docs before tests and rerun only checks affected by later changes. The coordinator reviews the whole task diff against baseline. The local register/lock coordinate local work only. Workers do not publish, merge, deploy or clean up. Unless the user explicitly requests local-only work, every implementation task commits, pushes and opens/updates its registered PR; reconcile uncertainty and never force-push. Use `--regular-pr` and BLOCKED/`--ready` evidence as required; they are not GitHub protection. The user merges manually unless explicitly delegated. Publication never authorizes merge, deployment or cleanup.
-
-Report implementation, checks, review, push/PR readiness, merge, deployment and cleanup separately at exact commits; refresh Git/GitHub facts and state unknown/not applicable. Record cross-repo compatibility/order. Do not author Django migrations or run `makemigrations`; give the user the exact task checkout, revision, environment and command and review the resulting migration history. See [agent workflow](../bknd/docs/agent-workflow.md).
-
-## Documentation completion gate
-
-`_docs` owns all authored project documentation, including technical references,
-plans and history. Follow the [documentation policy](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/documentation-policy.md). Keep only minimal
-README/AGENTS entry points and necessary software artifacts here; each additional
-local exception needs an owner, concrete reason and software consumer. Existing
-local documents are migration debt and remain authoritative until their reviewed
-migration; technical depth alone is never an exemption.
-
-For each task, review the affected feature's existing pages and relevant source,
-not the entire documentation library. Update existing pages when behavior,
-interfaces, supported limits, configuration or operating instructions change.
-Cosmetic/internal changes may record a specific reviewed `none` rationale. For
-example, `max_size` needs a documentation update only when it changes a limit a
-reader needs to know. No-op edits and new pages for every PR or phase are not required.
-
-Record the feature, impact, scoped rationale, exact code/docs references and
-concrete `_docs` targets through the structured lifecycle. The independent
-reviewer checks missing guidance and unnecessary detail. Report `Documentation:
-Updated`, `None` or `Pending` consistently with that evidence. Keep substantial
-working notes in one feature folder, consolidate useful history into records at
-closeout and preserve evidence. Code/docs integration, deployment and archival
-remain separate; publication or a passing link check is not completion.
-
-## Review focus
-
-Review changed behavior, defaults, contracts, state formats, paths and commands for stale docs and siblings; shared-contract/recovery work receives explicit documentation review. Links, Markdown edits, clean worktrees and local locks do not prove semantic alignment, readiness, branch protection, integration or deployment.
+- Routine, reversible, understood work within an accepted design may proceed on
+  Sol/medium with a concise coordinator rationale, without specialist triage or
+  heavy code review. A new feature or another repository alone is not a risk trigger.
+- Consequential execution, risk, financial/statistical methods, protocol, security/
+  authorization, persistent state, recovery, workflow authority, destructive tooling
+  or material uncertainty require Astra/high triage (xhigh for complex reasoning),
+  Astra/high implementation and separate Astra/xhigh review. Automatically delegate
+  required review to an agent distinct from triager and implementers; unavailable
+  capability blocks that gate. Keep approved model IDs; do not browse releases per task.
+- Accept a bounded brief with observable acceptance and the minimum sufficient
+  evidence. A blocker needs a concrete failure trigger and material impact or an
+  unmet mandatory gate. Keep optional improvements separate. Small corrections
+  inside the brief need affected-delta review, not a full planning restart.
+- Use a registered task/owner, named task worktree and fresh recorded baseline.
+  Preserve others' work; never stash, reset, copy credentials or force-push.
+  Keep independent work in disjoint paths and designate one check owner.
+- Finish source/docs before final checks. The coordinator runs generated
+  `verify-local` evidence at the final clean committed HEAD; reuse evidence only
+  while its exact SHA, helper, owner, environment and command bindings remain valid.
+  Required application/runtime checks and hosted CI remain required.
+- Review affected documentation semantically, including a short independent review
+  for routine work. Update owning `_docs` pages or record a specific reviewed
+  `none` rationale with exact references/targets through the lifecycle. Report
+  Documentation: Updated, None or Pending. Preserve historical evidence and existing
+  local authority until reviewed migration; do not create routine task journals.
+- The coordinator alone stages reviewed changes, uses lifecycle `commit` with
+  Phi Codex author/committer, and `publish` with the pinned App and verified
+  `phi-codex[bot]` creator. Unless local-only is requested, publish the registered PR;
+  retain BLOCKED until required evidence permits `--ready`, using `--regular-pr`
+  where required. Workers never commit, publish, merge, deploy, sync or clean up.
+- The user merges manually unless explicitly delegated. Publication does not
+  authorize deployment or cleanup. Report stage facts at exact commits, including
+  unknown/not applicable. After reported merges, the coordinator follows
+  [preservation-gated closeout](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/task-closeout.md);
+  respect retained worktrees. No guide grants production authority.
