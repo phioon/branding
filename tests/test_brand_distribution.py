@@ -70,6 +70,37 @@ class BrandDistributionTests(unittest.TestCase):
         self.assertFalse(manifest["selfHash"])
         self.assertNotIn("Web-Distribution.json", paths)
 
+    def test_generated_root_config_does_not_change_release_inventory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            release_files = {
+                ".codex/config.template.toml": b'model = "template"\n',
+                ".codex/agents/reviewer.toml": b'instructions = "review"\n',
+                "AGENTS.md": b"Release governance\n",
+                "nested/.codex/config.toml": b"Nested configuration\n",
+                ".gitignore": b"/.codex/config.toml\n/other-local.txt\n",
+                "other-local.txt": b"Other ignored files remain inventoried\n",
+            }
+            for relative, content in release_files.items():
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(content)
+            with mock.patch.object(distribution, "ROOT", root):
+                before = distribution.asset_manifest()
+                self.assertEqual(
+                    [entry["path"] for entry in before["files"]],
+                    sorted(release_files),
+                )
+                for entry in before["files"]:
+                    content = release_files[entry["path"]]
+                    self.assertEqual(entry["bytes"], len(content))
+                    self.assertEqual(entry["sha256"], hashlib.sha256(content).hexdigest())
+                generated = root / ".codex/config.toml"
+                for content in (b'model = "first"\n', b'model = "second"\n'):
+                    generated.write_bytes(content)
+                    self.assertNotIn(".codex/config.toml", distribution._release_paths())
+                    self.assertEqual(before, distribution.asset_manifest())
+
     def test_tokens_do_not_load_fonts_and_legacy_contract_is_frozen(self):
         tokens = (ROOT / "brand-tokens.css").read_text()
         self.assertNotIn("@font-face", tokens)
