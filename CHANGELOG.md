@@ -29,6 +29,11 @@
 
 ## Unreleased
 
+- Migrate fixed model defaults to the stable PHIOON routing template and unpinned
+  role instructions. Generated local selections remain ignored; independent
+  review and domain authority are unchanged. This does not change artwork,
+  brand version, web distribution or consumer locks.
+
 - Add the canonical `phioon_*` Codex roles while retaining bounded `mishkal_*`
   aliases for mixed-version clients. Update the managed defaults header and
   repository guidance; artwork, brand version and web distribution are unchanged.

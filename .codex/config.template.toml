@@ -1,0 +1,7 @@
+# Managed PHIOON stable template; runtime values are generated only for enrolled checkouts.
+model = @@MODEL@@
+model_reasoning_effort = @@EFFORT@@
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3

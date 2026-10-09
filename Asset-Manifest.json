@@ -8,38 +8,38 @@
   "files": [
     {
       "path": ".codex/agents/phioon_backend.toml",
-      "bytes": 2730,
-      "sha256": "bb8d8b384a5fa939053676220d8cf0aafe6ca31b407ee863156a599274534ac3"
+      "bytes": 3297,
+      "sha256": "008666086a0679f121d804fec9688183760bcc112a46e041ce7feaf1faf19b9a"
     },
     {
       "path": ".codex/agents/phioon_profiles.toml",
-      "bytes": 2753,
-      "sha256": "9f31c897486ea400b0e24f559de821f61e5af60d3133f7b5c1945b49c18a7378"
+      "bytes": 3322,
+      "sha256": "f6eba73df960960ae5d49fed840be050e44ae3582c6da215e2844e4a951c89db"
     },
     {
       "path": ".codex/agents/phioon_reviewer.toml",
-      "bytes": 3618,
-      "sha256": "470cd528967555c0648510cd028f93393e922ba9a5f5ad8b7df015ece8119258"
+      "bytes": 4307,
+      "sha256": "1de1f05195416b87acab2876f7d4ac36846660504c5fdbc3688f02dc7ad6e406"
     },
     {
       "path": ".codex/agents/phioon_terminal.toml",
-      "bytes": 2800,
-      "sha256": "de52435ad796fb370be523c427ce0f6632a46701f6ca383e66a3f926f243cc20"
+      "bytes": 3369,
+      "sha256": "0d4f56273031e08fffe2c3cf5ef74c4b6420ef56948cc121592c75558b9a313f"
     },
     {
       "path": ".codex/agents/phioon_triage.toml",
-      "bytes": 2708,
-      "sha256": "60a07bf698943b37d359ff584a22301b2af4a42e178357c6435a34fe0febf173"
+      "bytes": 3234,
+      "sha256": "21646286b8209804897c523c4d6e5d389b75e2f13c1e13a85c01d8fd9a457916"
     },
     {
       "path": ".codex/agents/phioon_webapp.toml",
-      "bytes": 4684,
-      "sha256": "fe6193e7dfe16a56bc3933df5040d4f972cd19588e1cb52bb67b9b29707b415e"
+      "bytes": 5259,
+      "sha256": "928c1048ca6178b23cd2b318bcd23481c8d29282f82b2da18486e30796713d4e"
     },
     {
-      "path": ".codex/config.toml",
-      "bytes": 279,
-      "sha256": "2ceec8ec1c91cd29c415da14125278d608fb6e4f086882d65651aa7de8850260"
+      "path": ".codex/config.template.toml",
+      "bytes": 210,
+      "sha256": "495b9dad53ccb1307cfbb873b82374eff76c7a2df2464c862ffd704ef6411151"
     },
     {
       "path": ".gitattributes",
@@ -58,18 +58,18 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 38,
-      "sha256": "599e8d09a18b6bac6f70ed12bf96f67e49c4d992ee2601bc173d92fbcb64b11d"
+      "bytes": 136,
+      "sha256": "1ccc61e2f225d95eb37170e782c92e1fa0796178ba77ffdd113a00b151cb162a"
     },
     {
       "path": "AGENTS.md",
-      "bytes": 7242,
-      "sha256": "a23490dd43b980fc3579d8050dfdcb1b7e626c40992ac3b4cfbe4568b6416ff0"
+      "bytes": 8093,
+      "sha256": "05de695abfbf332f07a991e3832df1beeca7491becebba3a33ca99fccd6ea3d8"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 4485,
-      "sha256": "666d332195ae69b1bc5a707d2d9fc02d333866c39e5c90adfc30cfda62e2c363"
+      "bytes": 4772,
+      "sha256": "5afc8a8ad5f1d63bfd313122fe0282a4d1ba580da9717d665c59d5f566087669"
     },
     {
       "path": "PHIOON-Brand-Guide-v1.pdf",
@@ -118,8 +118,8 @@
     },
     {
       "path": "docs/Repository.md",
-      "bytes": 4271,
-      "sha256": "1ddad039d2cf6414e32b5ebb76fa414492dada978a62a611c97ce11372edf4df"
+      "bytes": 4795,
+      "sha256": "1011f79e54abc6c6f55fe2257accef9aeebbeb1c8c4de6cedd7dfd16818f9a1d"
     },
     {
       "path": "docs/Size-Proof.png",
@@ -348,8 +348,8 @@
     },
     {
       "path": "scripts/brand_distribution.py",
-      "bytes": 20746,
-      "sha256": "b36028ca67971833d1f08bdc4c837d1def02d7268549b71f57bb650c61da97d0"
+      "bytes": 20984,
+      "sha256": "f8c2a75011641823e731eb24fc72a3da9f7e6150b9169f0cb4d75f3289519f98"
     },
     {
       "path": "scripts/legacy-web-distribution-1.1.0.json",
@@ -468,8 +468,8 @@
     },
     {
       "path": "tests/test_brand_distribution.py",
-      "bytes": 33756,
-      "sha256": "fcefc84c129c263cc59583d83c3a3115302a7ee9918800036909e2732d0c0405"
+      "bytes": 35496,
+      "sha256": "24febf63e89302375288b09c0aa7564f2596be9a543f21c016a8e67813f267c7"
     }
   ]
 }

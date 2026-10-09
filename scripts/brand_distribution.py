@@ -104,6 +104,10 @@ def _release_paths() -> list[str]:
     paths: list[str] = []
     for path in ROOT.rglob("*"):
         relative = path.relative_to(ROOT)
+        # Generated local model selection is not part of the release. Keep the
+        # versioned template and all other governance/configuration files hashed.
+        if relative.as_posix() == ".codex/config.toml":
+            continue
         if any(part in IGNORED_RELEASE_PARTS for part in relative.parts):
             continue
         if path.name in IGNORED_RELEASE_NAMES or not path.is_file():

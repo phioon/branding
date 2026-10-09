@@ -16,8 +16,10 @@ a bounded Branding writer; the stable frontend role covers assigned Website or
 Webapp consumers. Backend [agent workflow](../../bknd/docs/agent-workflow.md) owns
 lifecycle commands and canonical managed `.codex/` configuration. Synchronize only
 inside registered task worktrees and preserve custom configuration conflicts.
-The shared [model policy](../../bknd/docs/model-policy.md) defines the reviewer
-xhigh trial, complex-triage escalation and evaluated future model upgrades.
+The shared [model policy](../../bknd/docs/model-policy.md) defines approved routes,
+assignment-bound runtime confirmation and bounded automatic model upgrades.
+Versioned templates and role instructions stay separate from ignored generated
+selections; preserve customized settings and older tracked configurations.
 Unless the user explicitly requests local-only work, the coordinator commits and
 publishes each implementation task through that lifecycle; workers do not publish.
 Use explicit `--regular-pr`/BLOCKED/`--ready` evidence as required. The user merges
@@ -28,6 +30,12 @@ version or alter the web allowlist or consumer locks. Regenerate the full asset
 manifest after tracked governance/configuration changes, then run all required
 [checks](../AGENTS.md#required-checks). Consumer updates remain separately scoped
 under [Distribution](Distribution.md); source integration is not deployed evidence.
+
+The exact root `.codex/config.toml` is generated local routing state and is excluded
+from the release inventory. Stable `.codex/config.template.toml`, role definitions
+and other governance files remain hashed. This is not a blanket `.codex` or
+Git-ignored-file exemption; changing a local model selection does not change the
+brand release or consumer distribution.
 
 The coordinator runs the complete fixed `branding-python312-v1` profile through
 [Branding local verification](../../bknd/docs/agent-workflow.md#branding-local-verification).

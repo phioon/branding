@@ -64,7 +64,8 @@ Do not edit copies independently or overwrite conflicting custom settings.
 
 
 Branding always retains its complete profile: the asset manifest hashes governance
-and managed `.codex` files too. Regenerate it after those edits; the sibling
+and stable managed `.codex` files too. Only the exact generated root
+`.codex/config.toml` is excluded. Regenerate the manifest after stable-source edits; the sibling
 instruction-only lightweight route does not apply here. No brand version, artwork
 or consumer-pin change follows from workflow maintenance.
 
@@ -74,15 +75,25 @@ Follow [proportionate delivery](https://github.com/phioon/_docs/blob/main/handbo
 for routing, finite acceptance, check selection and stopping conditions. It owns
 those decisions; local check/design pages retain their command and evidence mechanics.
 
-- Routine, reversible, understood work within an accepted design may proceed on
-  Sol/medium with a concise coordinator rationale, without specialist triage or
+- Routine, reversible, understood work within an accepted design may use the
+  approved routine route with a concise coordinator rationale, without specialist triage or
   heavy code review. A new feature or another repository alone is not a risk trigger.
 - Consequential execution, risk, financial/statistical methods, protocol, security/
   authorization, persistent state, recovery, workflow authority, destructive tooling
-  or material uncertainty require Astra/high triage (xhigh for complex reasoning),
-  Astra/high implementation and separate Astra/xhigh review. Automatically delegate
+  or material uncertainty require approved triage (triage-complex for architecture,
+  cross-repo contracts or unclear recovery), advanced implementation and separate
+  review routes. Automatically delegate
   required review to an agent distinct from triager and implementers; unavailable
-  capability blocks that gate. Keep approved model IDs; do not browse releases per task.
+  capability blocks that gate. Resolve the exact pair for every new assignment and
+  confirm its actual client runtime before delivery work. Missing or mismatched
+  confirmation stays pending; never silently fall back. The coordinator resolves
+  assignments. Read-only roles use `python3.11 -B` with `observe-runtime`, the exact
+  literal helper path, complete assignment JSON and nonce in their own thread;
+  they remain active and wait for coordinator `admit-runtime` acknowledgement.
+  They never write controller state or locks. Before reviewed controller
+  enablement/enrollment, explicitly authorized migration seeds remain usable but
+  are reported as seed usage, not runtime admission. Existing admitted work
+  retains its pair; explicit overrides are separate. Do not browse releases per task.
 - Accept a bounded brief with observable acceptance and the minimum sufficient
   evidence. A blocker needs a concrete failure trigger and material impact or an
   unmet mandatory gate. Keep optional improvements separate. Small corrections
