@@ -17,7 +17,7 @@ Webapp consumers. Backend [agent workflow](../../bknd/docs/agent-workflow.md) ow
 lifecycle commands and canonical managed `.codex/` configuration. Synchronize only
 inside registered task worktrees and preserve custom configuration conflicts.
 The shared [model policy](../../bknd/docs/model-policy.md) defines approved routes,
-assignment-bound runtime confirmation and bounded automatic model upgrades.
+selection-only v3 routing, optional runtime diagnostics and recommendation refresh.
 Versioned templates and role instructions stay separate from ignored generated
 selections; preserve customized settings and older tracked configurations.
 Unless the user explicitly requests local-only work, the coordinator commits and

@@ -84,16 +84,15 @@ those decisions; local check/design pages retain their command and evidence mech
   cross-repo contracts or unclear recovery), advanced implementation and separate
   review routes. Automatically delegate
   required review to an agent distinct from triager and implementers; unavailable
-  capability blocks that gate. Resolve the exact pair for every new assignment and
-  confirm its actual client runtime before delivery work. Missing or mismatched
-  confirmation stays pending; never silently fall back. The coordinator resolves
-  assignments. Read-only roles use `python3.11 -B` with `observe-runtime`, the exact
-  literal helper path, complete assignment JSON and nonce in their own thread;
-  they remain active and wait for coordinator `admit-runtime` acknowledgement.
-  They never write controller state or locks. Before reviewed controller
-  enablement/enrollment, explicitly authorized migration seeds remain usable but
-  are reported as seed usage, not runtime admission. Existing admitted work
-  retains its pair; explicit overrides are separate. Do not browse releases per task.
+  capability blocks that gate. The coordinator resolves the exact pair for each
+  new assignment and supplies complete role instructions. Under activated
+  model-policy v3, configured/explicit dispatch selection is sufficient routing
+  evidence (`SELECTED`), not runtime or provider attestation. Optional runtime
+  diagnostics do not gate ordinary delivery. Report unavailable/conflicting dispatch;
+  never silently substitute a pair. Before v3 activation, retain the applicable
+  existing admission/seed policy. Read-only roles never write controller state
+  or locks. Existing assignments retain their selections; explicit overrides stay
+  separate. Do not browse releases at intake or change permissions through selection.
 - Accept a bounded brief with observable acceptance and the minimum sufficient
   evidence. A blocker needs a concrete failure trigger and material impact or an
   unmet mandatory gate. Keep optional improvements separate. Small corrections
