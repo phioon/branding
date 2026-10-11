@@ -63,8 +63,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 8016,
-      "sha256": "b5d11ed282b558e51f44801a3ea3a0197732e33bcbe53afe24bbcf433a082d4d"
+      "bytes": 8353,
+      "sha256": "414913de2bb73d8e2797e5ba9c9e3fa58c4a40ab50f2d5a11b7594f54aadf6d1"
     },
     {
       "path": "CHANGELOG.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "docs/Repository.md",
-      "bytes": 4803,
-      "sha256": "42806cddda4ade9661b4f53e3547d431b89eac37180e942e4568cd0931fa4718"
+      "bytes": 4947,
+      "sha256": "3bfb1cd2e025794d33799d637ff43a2c73118dec12ae2e461509c1bf7aac386f"
     },
     {
       "path": "docs/Size-Proof.png",
