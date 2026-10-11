@@ -29,6 +29,10 @@
 
 ## Unreleased
 
+- Align managed agent instructions with selection-only PHIOON policy v3; runtime
+  diagnostics remain optional after explicit activation. Regenerate governance
+  inventory without changing artwork, version, distribution or consumer locks.
+
 - Migrate fixed model defaults to the stable PHIOON routing template and unpinned
   role instructions. Generated local selections remain ignored; independent
   review and domain authority are unchanged. This does not change artwork,

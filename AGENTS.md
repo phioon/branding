@@ -34,10 +34,14 @@ is not automatically loaded in a standalone clone.
 
 ## Required checks
 
-For every Branding task, the coordinator runs the full Python 3.12
+For every Branding task, the coordinator runs the affected Python 3.12
 [Branding local profile](../bknd/docs/agent-workflow.md#branding-local-verification)
 with `verify-local --repo branding` at the final clean committed task HEAD.
-It executes all three commands below and records generated identity-bound evidence;
+Product changes execute all three commands below. Changes confined to managed
+root instructions/templates/roles plus `Asset-Manifest.json`, `CHANGELOG.md` and
+`docs/Repository.md` execute manifest/source checks and committed instruction
+validation, without the unrelated distribution unit suite. The helper selects
+these exact paths and records generated identity-bound evidence;
 manual command output or tested notes cannot replace it. GitHub Actions is retired.
 Manifest/source checks do not establish visual approval or a consumer release.
 
@@ -63,11 +67,12 @@ Managed `.codex/` files come from `bknd/.codex/` through the
 Do not edit copies independently or overwrite conflicting custom settings.
 
 
-Branding always retains its complete profile: the asset manifest hashes governance
-and stable managed `.codex` files too. Only the exact generated root
-`.codex/config.toml` is excluded. Regenerate the manifest after stable-source edits; the sibling
-instruction-only lightweight route does not apply here. No brand version, artwork
-or consumer-pin change follows from workflow maintenance.
+Branding's asset manifest hashes governance and stable managed `.codex` files too.
+Only the exact generated root `.codex/config.toml` is excluded. Regenerate the
+manifest after stable-source edits; governance-only verification retains the
+manifest/source checks in addition to instruction validation. Other paths retain
+the complete profile. No brand version, artwork or consumer-pin change follows
+from workflow maintenance.
 
 ## Shared delivery checklist
 
@@ -84,16 +89,15 @@ those decisions; local check/design pages retain their command and evidence mech
   cross-repo contracts or unclear recovery), advanced implementation and separate
   review routes. Automatically delegate
   required review to an agent distinct from triager and implementers; unavailable
-  capability blocks that gate. Resolve the exact pair for every new assignment and
-  confirm its actual client runtime before delivery work. Missing or mismatched
-  confirmation stays pending; never silently fall back. The coordinator resolves
-  assignments. Read-only roles use `python3.11 -B` with `observe-runtime`, the exact
-  literal helper path, complete assignment JSON and nonce in their own thread;
-  they remain active and wait for coordinator `admit-runtime` acknowledgement.
-  They never write controller state or locks. Before reviewed controller
-  enablement/enrollment, explicitly authorized migration seeds remain usable but
-  are reported as seed usage, not runtime admission. Existing admitted work
-  retains its pair; explicit overrides are separate. Do not browse releases per task.
+  capability blocks that gate. The coordinator resolves the exact pair for each
+  new assignment and supplies complete role instructions. Under activated
+  model-policy v3, configured/explicit dispatch selection is sufficient routing
+  evidence (`SELECTED`), not runtime or provider attestation. Optional runtime
+  diagnostics do not gate ordinary delivery. Report unavailable/conflicting dispatch;
+  never silently substitute a pair. Before v3 activation, retain the applicable
+  existing admission/seed policy. Read-only roles never write controller state
+  or locks. Existing assignments retain their selections; explicit overrides stay
+  separate. Do not browse releases at intake or change permissions through selection.
 - Accept a bounded brief with observable acceptance and the minimum sufficient
   evidence. A blocker needs a concrete failure trigger and material impact or an
   unmet mandatory gate. Keep optional improvements separate. Small corrections

@@ -17,7 +17,7 @@ Webapp consumers. Backend [agent workflow](../../bknd/docs/agent-workflow.md) ow
 lifecycle commands and canonical managed `.codex/` configuration. Synchronize only
 inside registered task worktrees and preserve custom configuration conflicts.
 The shared [model policy](../../bknd/docs/model-policy.md) defines approved routes,
-assignment-bound runtime confirmation and bounded automatic model upgrades.
+selection-only v3 routing, optional runtime diagnostics and recommendation refresh.
 Versioned templates and role instructions stay separate from ignored generated
 selections; preserve customized settings and older tracked configurations.
 Unless the user explicitly requests local-only work, the coordinator commits and
@@ -37,12 +37,14 @@ and other governance files remain hashed. This is not a blanket `.codex` or
 Git-ignored-file exemption; changing a local model selection does not change the
 brand release or consumer distribution.
 
-The coordinator runs the complete fixed `branding-python312-v1` profile through
+The coordinator runs the affected `branding-python312-v1` profile through
 [Branding local verification](../../bknd/docs/agent-workflow.md#branding-local-verification).
-It uses Python 3.12 for manifest freshness, source validation and all distribution
-unit tests. Missing prerequisites or failed/incomplete/stale evidence blocks READY.
+It uses Python 3.12 for manifest freshness and source validation. Product changes
+also run all distribution unit tests; the exact governance-only path set documented
+in the required checks uses committed instruction validation instead. Missing
+prerequisites or failed/incomplete/stale evidence blocks READY.
 All source/docs must be committed before this check; regenerate the full manifest
-after tracked governance changes. No documentation-only exemption applies.
+after tracked governance changes. There is no blanket documentation-only exemption.
 
 The `brand-kit` Actions job is removed. Merge the Backend profile support before
 this companion retirement. There is no automatic PR or post-merge hosted run;
