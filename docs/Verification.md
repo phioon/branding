@@ -45,7 +45,9 @@ retirement and refusal of modified/unknown legacy entries, symlinks and invalid
 topology before any write. Legacy migration uses a frozen checksummed allowlist,
 never the removed archive folder.
 
-Before READY, the coordinator must run the fixed Python 3.12 local profile at
-the clean committed final task HEAD as described in [Repository](Repository.md).
-Manual development checks do not replace that identity-bound evidence.
-Consumer source, build, runtime and deployed-state verification remain separate.
+For new tasks, use Python 3.12 to run the commands above directly from the
+owning checkout, as described in [Repository](Repository.md). Before READY,
+record the inspected source revision and working-tree changes with the actual
+results. Retained registered-profile evidence applies to its historical tasks;
+it is not a prerequisite for new work. Consumer source, build, runtime and
+deployed-state verification remain separate.

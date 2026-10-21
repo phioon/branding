@@ -10,20 +10,13 @@ Distribution 2.0.0 remains immutable history. The proposed 3.0.0 contract change
 producer identity only; consumer verifier and lock adoption are separate pending
 Website/Webapp tasks. No tag or release is created by source preparation.
 
-[AGENTS.md](../AGENTS.md) carries the standalone triage, model, independent-review,
-registered-worktree, publication and documentation gates. The coordinator assigns
-a bounded Branding writer; the stable frontend role covers assigned Website or
-Webapp consumers. Backend [agent workflow](../../bknd/docs/agent-workflow.md) owns
-lifecycle commands and canonical managed `.codex/` configuration. Synchronize only
-inside registered task worktrees and preserve custom configuration conflicts.
-The shared [model policy](../../bknd/docs/model-policy.md) defines approved routes,
-selection-only v3 routing, optional runtime diagnostics and recommendation refresh.
-Versioned templates and role instructions stay separate from ignored generated
-selections; preserve customized settings and older tracked configurations.
-Unless the user explicitly requests local-only work, the coordinator commits and
-publishes each implementation task through that lifecycle; workers do not publish.
-Use explicit `--regular-pr`/BLOCKED/`--ready` evidence as required. The user merges
-manually unless delegated; publication never authorizes deployment or cleanup.
+[AGENTS.md](../AGENTS.md) carries the active Vibe workflow and PHIOON delivery
+and documentation preferences. Select native agents/models by the task under
+Vibe; the former PHIOON domain profiles, routing, registered-worktree requirements
+and configuration synchronization are deferred. Preserve local client settings.
+After applicable checks and review, create the task PR by default unless local-only
+or another explicit restriction applies. Keep `[READY]`/`[BLOCKED]` truthful;
+the user merges manually. Publication grants no deployment or cleanup authority.
 
 Governance maintenance belongs under Unreleased and does not bump the brand
 version or alter the web allowlist or consumer locks. Regenerate the full asset
@@ -31,24 +24,23 @@ manifest after tracked governance/configuration changes, then run all required
 [checks](../AGENTS.md#required-checks). Consumer updates remain separately scoped
 under [Distribution](Distribution.md); source integration is not deployed evidence.
 
-The exact root `.codex/config.toml` is generated local routing state and is excluded
-from the release inventory. Stable `.codex/config.template.toml`, role definitions
-and other governance files remain hashed. This is not a blanket `.codex` or
-Git-ignored-file exemption; changing a local model selection does not change the
-brand release or consumer distribution.
+The exact root `.codex/config.toml` and `AGENTS.override.md` are host-local and
+excluded from the release inventory. Stable templates and other governance files
+remain hashed. This is not a blanket `.codex` or Git-ignored-file exemption;
+nested files with the same names remain inventoried. Local settings/overlays do
+not change the brand release or web consumer distribution.
 
-The coordinator runs the affected `branding-python312-v1` profile through
-[Branding local verification](../../bknd/docs/agent-workflow.md#branding-local-verification).
-It uses Python 3.12 for manifest freshness and source validation. Product changes
-also run all distribution unit tests; the exact governance-only path set documented
-in the required checks uses committed instruction validation instead. Missing
-prerequisites or failed/incomplete/stale evidence blocks READY.
-All source/docs must be committed before this check; regenerate the full manifest
-after tracked governance changes. There is no blanket documentation-only exemption.
+Generated `graphify-out/` graphs and caches are also excluded from the release
+inventory. Their creation or refresh must not change release metadata.
 
-The `brand-kit` Actions job is removed. Merge the Backend profile support before
-this companion retirement. There is no automatic PR or post-merge hosted run;
-local logs/evidence remain in the repository Git common directory. These checks
+Run the Python 3.12 commands in [Required checks](../AGENTS.md#required-checks)
+directly. Distribution-tooling changes also require the unit suite. Regenerate
+metadata after inventoried source edits; incomplete/stale checks or documentation
+block `[READY]`. These checks need no old registration, routing or ledger.
+
+Historical CI retirement: the `brand-kit` Actions job was removed; the former
+Backend-profile prerequisite and Git-common-directory evidence applied to that
+retirement, not new Vibe tasks. Preserve those records. The direct checks above
 validate asset inventory and tooling, not design quality, deployed consumer assets
 or GitHub-enforced merge rules.
 

@@ -4,7 +4,7 @@ This repository owns PHIOON visual source assets, distribution metadata and
 brand guidance. It does not own application behavior, deployment, or consumer
 layout decisions. Current user scope governs; this guide does not authorize
 tagging, merging, deployment, or changes in consumer repositories. Authorized
-implementation follows the task-publication gates below. Start with [README](README.md),
+implementation follows the delivery preferences below. Start with [README](README.md),
 [repository controls](docs/Repository.md) and [distribution](docs/Distribution.md).
 Read applicable guides before editing sibling repositories; the umbrella guide
 is not automatically loaded in a standalone clone.
@@ -34,16 +34,10 @@ is not automatically loaded in a standalone clone.
 
 ## Required checks
 
-For every Branding task, the coordinator runs the affected Python 3.12
-[Branding local profile](../bknd/docs/agent-workflow.md#branding-local-verification)
-with `verify-local --repo branding` at the final clean committed task HEAD.
-Product changes execute all three commands below. Changes confined to managed
-root instructions/templates/roles plus `Asset-Manifest.json`, `CHANGELOG.md` and
-`docs/Repository.md` execute manifest/source checks and committed instruction
-validation, without the unrelated distribution unit suite. The helper selects
-these exact paths and records generated identity-bound evidence;
-manual command output or tested notes cannot replace it. GitHub Actions is retired.
-Manifest/source checks do not establish visual approval or a consumer release.
+For Branding source or consumer-contract changes, run the applicable Python 3.12
+checks below. Run the full set for distribution behavior; for documentation or
+instruction-only edits, run relevant source/manifest checks and `git diff --check`.
+These checks do not establish visual approval or a consumer release.
 
 ```sh
 python3 scripts/brand_distribution.py generate --check
@@ -57,70 +51,79 @@ release metadata consumed by tools with its concrete consumer justification.
 
 ## Ownership and configuration
 
-The coordinator explicitly assigns a bounded Branding writer; there is no new
-standing Branding role. The existing `phioon_webapp` role covers assigned Website,
-Webapp or Admin web work and does not confer Branding write access. Approved
-identity rules govern consumer visuals; Creative Tim discovery and local templates
-guide consumer composition only. See [frontend guidance](../bknd/docs/agent-workflow.md#frontend-and-brand-guidance).
-Managed `.codex/` files come from `bknd/.codex/` through the
-[configuration workflow](../bknd/docs/agent-workflow.md#configuration-and-discovery).
-Do not edit copies independently or overwrite conflicting custom settings.
+Branding owns source assets, distribution metadata and identity rules. Consumer
+repositories own layout and composition; approved identity rules govern how they
+use assets. See [frontend guidance](../bknd/docs/agent-workflow.md#frontend-and-brand-guidance).
+Agent profiles are no longer distributed from Backend. Preserve unrelated
+client configuration; Vibe governs task-specific delegation.
 
 
 Branding's asset manifest hashes governance and stable managed `.codex` files too.
-Only the exact generated root `.codex/config.toml` is excluded. Regenerate the
-manifest after stable-source edits; governance-only verification retains the
-manifest/source checks in addition to instruction validation. Other paths retain
-the complete profile. No brand version, artwork or consumer-pin change follows
-from workflow maintenance.
+Only the exact root `.codex/config.toml` and local `AGENTS.override.md` are excluded. Regenerate the
+manifest after stable-source edits. Workflow documentation does not imply a brand
+version, artwork or consumer-pin change.
 
-## Shared delivery checklist
+## Commands
 
-Follow [proportionate delivery](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/proportionate-delivery.md)
-for routing, finite acceptance, check selection and stopping conditions. It owns
-those decisions; local check/design pages retain their command and evidence mechanics.
+Use the source/manifest and distribution checks in **Required checks** above.
 
-- Routine, reversible, understood work within an accepted design may use the
-  approved routine route with a concise coordinator rationale, without specialist triage or
-  heavy code review. A new feature or another repository alone is not a risk trigger.
-- Consequential execution, risk, financial/statistical methods, protocol, security/
-  authorization, persistent state, recovery, workflow authority, destructive tooling
-  or material uncertainty require approved triage (triage-complex for architecture,
-  cross-repo contracts or unclear recovery), advanced implementation and separate
-  review routes. Automatically delegate
-  required review to an agent distinct from triager and implementers; unavailable
-  capability blocks that gate. The coordinator resolves the exact pair for each
-  new assignment and supplies complete role instructions. Under activated
-  model-policy v3, configured/explicit dispatch selection is sufficient routing
-  evidence (`SELECTED`), not runtime or provider attestation. Optional runtime
-  diagnostics do not gate ordinary delivery. Report unavailable/conflicting dispatch;
-  never silently substitute a pair. Before v3 activation, retain the applicable
-  existing admission/seed policy. Read-only roles never write controller state
-  or locks. Existing assignments retain their selections; explicit overrides stay
-  separate. Do not browse releases at intake or change permissions through selection.
-- Accept a bounded brief with observable acceptance and the minimum sufficient
-  evidence. A blocker needs a concrete failure trigger and material impact or an
-  unmet mandatory gate. Keep optional improvements separate. Small corrections
-  inside the brief need affected-delta review, not a full planning restart.
-- Use a registered task/owner, named task worktree and fresh recorded baseline.
-  Preserve others' work; never stash, reset, copy credentials or force-push.
-  Keep independent work in disjoint paths and designate one check owner.
-- Finish source/docs before final checks. The coordinator runs generated
-  `verify-local` evidence at the final clean committed HEAD; reuse evidence only
-  while its exact SHA, helper, owner, environment and command bindings remain valid.
-  Required application/runtime checks and hosted CI remain required.
-- Review affected documentation semantically, including a short independent review
-  for routine work. Update owning `_docs` pages or record a specific reviewed
-  `none` rationale with exact references/targets through the lifecycle. Report
-  Documentation: Updated, None or Pending. Preserve historical evidence and existing
-  local authority until reviewed migration; do not create routine task journals.
-- The coordinator alone stages reviewed changes, uses lifecycle `commit` with
-  Phi Codex author/committer, and `publish` with the pinned App and verified
-  `phi-codex[bot]` creator. Unless local-only is requested, publish the registered PR;
-  retain BLOCKED until required evidence permits `--ready`, using `--regular-pr`
-  where required. Workers never commit, publish, merge, deploy, sync or clean up.
-- The user merges manually unless explicitly delegated. Publication does not
-  authorize deployment or cleanup. Report stage facts at exact commits, including
-  unknown/not applicable. After reported merges, the coordinator follows
-  [preservation-gated closeout](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/task-closeout.md);
-  respect retained worktrees. No guide grants production authority.
+## Codex workflow
+
+Read the [current Codex workflow](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/codex-workflow.md)
+before nontrivial work; in the umbrella, use the local `_docs` copy. It maps
+[Vibe Prompt 12](https://github.com/soumatheusgomes/vibe-coding-toolkit/blob/790a895304e0c08b70a5b215c9d334f1c86b816c/docs/prompts/12-existing-project-setup.md)
+to the [Codex guide](https://github.com/soumatheusgomes/vibe-coding-toolkit/blob/790a895304e0c08b70a5b215c9d334f1c86b816c/docs/tools/15-codex-workflow.md),
+shared agreements and subagent policy. The Claude onboarding playbook is not the
+Codex integration specification. Read applicable local skills explicitly when the
+umbrella does not advertise them; a standalone repository does not inherit its
+parent workspace instructions.
+
+Use Ponytail full and concise Caveman replies; keep persisted prose normal. Use
+relevant Superpowers skills and Context7 under the user's existing authorization.
+Preserve the main model, provider and authentication; choose supported subagent
+capability by task and authorized policy. Graphify/Caveman LLM work preserves this
+client's model/settings/authentication; use local `GRAPHIFY_BACKEND=none` when
+native semantic delegation is unavailable. Do not enable a proxy or new API billing.
+
+Use native subagent tools with the [bounded brief](.codex/delegation-brief.md).
+Write `.codex-delegations/<task_name>.json` before spawning. Include exactly one
+project-root-relative declaration pointer in the native task message; require the
+child to read it and compare the declared objective, writable scope, dependencies
+and checks with the assigned task. A missing, ambiguous, unsafe, unreadable or
+inconsistent pointer/record blocks work. Compare trusted native task identity
+with the record when available (the final component of a canonical task path);
+a mismatch blocks work. When trusted identity is unavailable, continue only the
+authorized declared scope and report `native identity binding unverified` in
+`risks`. Do not derive identity from freeform text. Keep transient declarations
+out of Git, graphs and release packages.
+Give each file one writer; isolate mutable resources and serialize dependencies.
+Reviewers work read-only. Confirm a failed/interrupted worker stopped before
+handing over its files. The coordinator checks actual diffs and evidence.
+Trusted project hooks check brief/report structure on intercepted events; they do
+not create a read-only sandbox, prove findings or enforce file ownership.
+
+Preserve user changes, security, accessibility, validation and explicit limits.
+Never author Django migrations or run `makemigrations`. Run repository checks
+directly. Do not invoke legacy onboarding/startup, registration, profile routing,
+configuration sync, `verify-local` or Git-lifecycle tools to start/deliver a task.
+Preserve legacy tools and records. Status questions do not cancel authorized work;
+continue independent work around blockers and respect pauses/cancellation. Verify
+checkout/process state when resuming; keep a short handoff in the existing plan.
+
+## Documentation and delivery
+
+Follow the [documentation policy](https://github.com/phioon/_docs/blob/main/handbook/engineering/agents-and-workflow/documentation-policy.md).
+Private canonical prose belongs in `_docs` (`handbook`, `work`, `records`,
+`templates`); keep existing contracts until reviewed migration. Public product
+docs retain their own authority. Before delivery, report `Documentation: Updated`,
+reviewed `None`, or `Pending`, with paths/source revisions and an independent
+semantic check. Do not put private evidence in public PRs.
+
+The coordinator has standing authorization to commit reviewed work, push a task
+branch and create/update its PR after applicable local checks and required review.
+Task-specific limits prevail; stage only intended files. Use `[READY]` and non-draft
+state only when required local/CI checks, review and docs pass at the current head.
+Otherwise use `[BLOCKED]` and draft with a concrete resolution. Failed local checks
+or incomplete review block initial publication unless the user requests an early
+draft. Record companion PRs and exact revisions. The user merges manually; do not
+merge, enable auto-merge, deploy or clean up unrelated resources.

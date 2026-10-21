@@ -78,6 +78,7 @@ class BrandDistributionTests(unittest.TestCase):
                 ".codex/agents/reviewer.toml": b'instructions = "review"\n',
                 "AGENTS.md": b"Release governance\n",
                 "nested/.codex/config.toml": b"Nested configuration\n",
+                "nested/AGENTS.override.md": b"Nested versioned instructions\n",
                 ".gitignore": b"/.codex/config.toml\n/other-local.txt\n",
                 "other-local.txt": b"Other ignored files remain inventoried\n",
             }
@@ -100,6 +101,34 @@ class BrandDistributionTests(unittest.TestCase):
                     generated.write_bytes(content)
                     self.assertNotIn(".codex/config.toml", distribution._release_paths())
                     self.assertEqual(before, distribution.asset_manifest())
+                overlay = root / "AGENTS.override.md"
+                for content in (b"First local instructions\n", b"Changed local instructions\n"):
+                    overlay.write_bytes(content)
+                    self.assertNotIn("AGENTS.override.md", distribution._release_paths())
+                    self.assertEqual(before, distribution.asset_manifest())
+
+    def test_graphify_output_does_not_change_release_inventory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "AGENTS.md").write_text("Release governance\n")
+            with mock.patch.object(distribution, "ROOT", root):
+                before = distribution.asset_manifest()
+                output = root / "graphify-out" / "cache"
+                output.mkdir(parents=True)
+                (output / "stat-index.json").write_text('{"local": true}\n')
+                (output.parent / "graph.json").write_text('{"nodes": []}\n')
+                self.assertEqual(before, distribution.asset_manifest())
+
+    def test_transient_delegation_briefs_do_not_change_release_inventory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "AGENTS.md").write_text("Release governance\n")
+            with mock.patch.object(distribution, "ROOT", root):
+                before = distribution.asset_manifest()
+                output = root / ".codex-delegations"
+                output.mkdir()
+                (output / "reader.json").write_text('{"objective": "temporary task"}\n')
+                self.assertEqual(before, distribution.asset_manifest())
 
     def test_tokens_do_not_load_fonts_and_legacy_contract_is_frozen(self):
         tokens = (ROOT / "brand-tokens.css").read_text()

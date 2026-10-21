@@ -29,6 +29,14 @@
 
 ## Unreleased
 
+- Exclude generated Graphify graphs and caches from release metadata so local
+  graph creation and queries do not alter the Branding release inventory.
+- Use Vibe task workflows with PHIOON delivery/documentation preferences; retire
+  active PHIOON domain roles. Preserve prior records and local client settings.
+- Exclude the exact root `AGENTS.override.md` local overlay from release metadata,
+  alongside generated root `.codex/config.toml`. Other governance files remain
+  inventoried. No artwork, brand version, web allowlist or consumer lock changes.
+
 - Align managed agent instructions with selection-only PHIOON policy v3; runtime
   diagnostics remain optional after explicit activation. Regenerate governance
   inventory without changing artwork, version, distribution or consumer locks.
