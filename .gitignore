@@ -4,3 +4,7 @@ __pycache__/
 
 # Generated project-local model selection; stable template remains versioned.
 .codex/config.toml
+
+# Generated local code graph; review exports before sharing.
+graphify-out/
+.codex-delegations/

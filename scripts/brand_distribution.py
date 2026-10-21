@@ -65,7 +65,7 @@ MANAGED_CONSUMER_ROOTS = (
     "public/brand/svg",
 )
 MANAGED_CONSUMER_FILES = ("public/brand/brand-tokens.css",)
-IGNORED_RELEASE_PARTS = {".git", "__pycache__", ".pytest_cache"}
+IGNORED_RELEASE_PARTS = {".git", "__pycache__", ".pytest_cache", "graphify-out", ".codex-delegations"}
 IGNORED_RELEASE_NAMES = {".DS_Store", "Asset-Manifest.json"}
 
 
@@ -104,9 +104,9 @@ def _release_paths() -> list[str]:
     paths: list[str] = []
     for path in ROOT.rglob("*"):
         relative = path.relative_to(ROOT)
-        # Generated local model selection is not part of the release. Keep the
-        # versioned template and all other governance/configuration files hashed.
-        if relative.as_posix() == ".codex/config.toml":
+        # Host-local configuration/instructions must not make releases machine-specific.
+        # Keep versioned templates and other governance/configuration files hashed.
+        if relative.as_posix() in {".codex/config.toml", "AGENTS.override.md"}:
             continue
         if any(part in IGNORED_RELEASE_PARTS for part in relative.parts):
             continue
