@@ -7,4 +7,6 @@ __pycache__/
 
 # Generated local code graph; review exports before sharing.
 graphify-out/
+/.codex/config.toml
+/AGENTS.override.md
 .codex-delegations/
