@@ -48,8 +48,8 @@
     },
     {
       "path": ".codex/delegation-brief.md",
-      "bytes": 12881,
-      "sha256": "2b789cdee527fbc4dfa44e9cf7ba532741d24326da686312bb956f0a98ce1f92"
+      "bytes": 37689,
+      "sha256": "37c4e7813e8057eff0c6189111cbca5f4906d3562ec4f2c0a9ecbd4dbd09784a"
     },
     {
       "path": ".codex/hooks.json",
@@ -57,9 +57,24 @@
       "sha256": "88875fe301e527904b8a5a8c538cb1b6971fab37fa908487dea865f0afe235f3"
     },
     {
+      "path": ".codex/hooks/native_display.py",
+      "bytes": 5808,
+      "sha256": "e7ca75173df1ed950eed0c023608046f6f408585290a2ea4bbd1ccac6d709131"
+    },
+    {
       "path": ".codex/hooks/subagents.py",
-      "bytes": 9226,
-      "sha256": "004e8f68f5d69843eac41a0700453239139286ce65e1ef0e1bfa60c8b26e16c6"
+      "bytes": 9558,
+      "sha256": "35f74dee567742647eae581cef976a6a976bbd5d090d99c1b4ef97522f6822d8"
+    },
+    {
+      "path": ".codex/native-display.md",
+      "bytes": 5720,
+      "sha256": "2976f719cb474985777d12df5b19eb745dd65bb5d036ac2821887915ac88d184"
+    },
+    {
+      "path": ".codex/vibe-workflow.toml",
+      "bytes": 72,
+      "sha256": "05ae0a0859bbe19ffd0f48c6bf53e18823a7f9310b026f34505284dcf851aa0c"
     },
     {
       "path": ".gitattributes",
@@ -78,8 +93,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 232,
-      "sha256": "31a5578c651c67c93d1724a2099d4d4d38ec902f7674996347c923a8b756f423"
+      "bytes": 272,
+      "sha256": "6015ed9531d58b953ef0b5f136fa044412f5955fb82e892f638a773bf8328105"
     },
     {
       "path": ".graphifyignore",
@@ -88,8 +103,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 8022,
-      "sha256": "3b8ff7c16c19db384d8558b5ef8cb767e637a4966e48993b53d601a40625609a"
+      "bytes": 10890,
+      "sha256": "27d9fe6ae48f0838aaded010011f4a0452762a4c25f8d03bebebdcc5607e9c2a"
     },
     {
       "path": "CHANGELOG.md",
