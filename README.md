@@ -88,6 +88,8 @@ modified or symlinked legacy entries fail before writes. Consumer-owned
 `public/brand/SOURCE.md` is preserved. Review the generated assets and lock
 together. See [the migration contract](docs/Distribution.md#migration-from-110).
 
-The coordinator runs Python 3.12 local verification at the final clean committed
-HEAD through the registered lifecycle. Source checks do not establish visual
-approval, consumer integration or deployment.
+Run the direct source and distribution checks in [AGENTS.md](AGENTS.md) and
+[verification guidance](docs/Verification.md) with Python 3.12. Record the exact
+source and results under the current Vibe task lifecycle. Retained registered
+profiles apply only to unfinished legacy tasks. Source checks do not establish
+visual approval, consumer integration or deployment.

@@ -48,8 +48,8 @@
     },
     {
       "path": ".codex/delegation-brief.md",
-      "bytes": 37689,
-      "sha256": "37c4e7813e8057eff0c6189111cbca5f4906d3562ec4f2c0a9ecbd4dbd09784a"
+      "bytes": 50280,
+      "sha256": "ac90c118548c79813b95c81394be387abd24d35b64678ec737d0b9811948248f"
     },
     {
       "path": ".codex/hooks.json",
@@ -58,8 +58,8 @@
     },
     {
       "path": ".codex/hooks/native_display.py",
-      "bytes": 5808,
-      "sha256": "e7ca75173df1ed950eed0c023608046f6f408585290a2ea4bbd1ccac6d709131"
+      "bytes": 8633,
+      "sha256": "1f83f20a15d4528da82e16926213ec7870929adde8eb903396bd9d07d5637b1a"
     },
     {
       "path": ".codex/hooks/subagents.py",
@@ -68,13 +68,13 @@
     },
     {
       "path": ".codex/native-display.md",
-      "bytes": 5720,
-      "sha256": "2976f719cb474985777d12df5b19eb745dd65bb5d036ac2821887915ac88d184"
+      "bytes": 15002,
+      "sha256": "8b8178804396a934df37337c4bcf6dafa790064d956a661c81fd3ab756ec4f0d"
     },
     {
       "path": ".codex/vibe-workflow.toml",
-      "bytes": 72,
-      "sha256": "05ae0a0859bbe19ffd0f48c6bf53e18823a7f9310b026f34505284dcf851aa0c"
+      "bytes": 161,
+      "sha256": "3bc93675db7a4d3adf68ef4de4e4cd42b8eded589a8176cce663e79d718f44d0"
     },
     {
       "path": ".gitattributes",
@@ -103,8 +103,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 10890,
-      "sha256": "27d9fe6ae48f0838aaded010011f4a0452762a4c25f8d03bebebdcc5607e9c2a"
+      "bytes": 14092,
+      "sha256": "1e9b8d137e91f5fbd68870500cb73c90f6e41d74523a1eb55a671f5753249a72"
     },
     {
       "path": "CHANGELOG.md",
@@ -128,8 +128,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5415,
-      "sha256": "1f26c80851fbd02b4aa665efdd2168b0f2d35af2a27d4feea39ea581b3379dfa"
+      "bytes": 5578,
+      "sha256": "9e9a86cd4f968e05860d216e250f8444bd35a4c2ad088824479f6335daab1c73"
     },
     {
       "path": "Web-Distribution.json",
