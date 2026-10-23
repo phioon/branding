@@ -108,8 +108,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5570,
-      "sha256": "3b98e9d7eb7c393a6c18760efc5e7785f44b6318f83d8275a19364aff6013b2e"
+      "bytes": 5694,
+      "sha256": "de0ea244b5cacfc5a13164c5089460f852d039b0877271e359acf4ec47f3162e"
     },
     {
       "path": "PHIOON-Brand-Guide-v1.pdf",
@@ -128,8 +128,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5415,
-      "sha256": "1f26c80851fbd02b4aa665efdd2168b0f2d35af2a27d4feea39ea581b3379dfa"
+      "bytes": 5578,
+      "sha256": "9e9a86cd4f968e05860d216e250f8444bd35a4c2ad088824479f6335daab1c73"
     },
     {
       "path": "Web-Distribution.json",
