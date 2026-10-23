@@ -7,27 +7,27 @@
   "selfHash": false,
   "files": [
     {
-      "path": ".agents/skills/project-onboarding/SKILL.md",
+      "path": ".agents/retired/project-onboarding/SKILL.md",
       "bytes": 2277,
       "sha256": "c1394137c1a2283a3e843c71e505f6b1376e0cfc289b07e33108d90ec148099f"
     },
     {
-      "path": ".agents/skills/project-onboarding/references/bindings.json",
+      "path": ".agents/retired/project-onboarding/references/bindings.json",
       "bytes": 434,
       "sha256": "4cc415a90ffcca2acb28905f9f772a4f92d39837b1187adaae2c7399b624b70e"
     },
     {
-      "path": ".agents/skills/project-onboarding/references/multi-project.json",
+      "path": ".agents/retired/project-onboarding/references/multi-project.json",
       "bytes": 3299,
       "sha256": "ba1a5bce0f05badbea2590d32087acc9566e7c3a9b94c7c89dd6c758b4686801"
     },
     {
-      "path": ".agents/skills/project-onboarding/references/onboarding.md",
+      "path": ".agents/retired/project-onboarding/references/onboarding.md",
       "bytes": 12606,
       "sha256": "ba28408f474d94d10bd93f90d3f387c514d93dcc71c27721abbc765e6162a44b"
     },
     {
-      "path": ".agents/skills/project-onboarding/references/single-project.json",
+      "path": ".agents/retired/project-onboarding/references/single-project.json",
       "bytes": 2621,
       "sha256": "52bb9d2c1bfe4882079c66ac5c219008c9db3a4a277087b9946dfd6d251e8bd0"
     },
@@ -38,13 +38,13 @@
     },
     {
       "path": ".codex/config.example.toml",
-      "bytes": 374,
-      "sha256": "8f36a5e5d1569c0b2a4d6f4d2b0ee9a81e6999f2a0fbcca74c47f2a5bc02c213"
+      "bytes": 62,
+      "sha256": "2cf388bc7f719a0e0be5872c3941dd48481bb11ba150c9b2cb5b03826bf2ddeb"
     },
     {
       "path": ".codex/config.template.toml",
       "bytes": 210,
-      "sha256": "495b9dad53ccb1307cfbb873b82374eff76c7a2df2464c862ffd704ef6411151"
+      "sha256": "be40c686c935c592c11f1df6ec534bb54ac72186abfa2f7449c21c1865cc57aa"
     },
     {
       "path": ".codex/delegation-brief.md",
