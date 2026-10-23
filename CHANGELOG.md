@@ -29,6 +29,8 @@
 
 ## Unreleased
 
+- Point current verification guidance to direct checks and Vibe; preserve registered profiles for unfinished legacy tasks.
+
 - Exclude generated Graphify graphs and caches from release metadata so local
   graph creation and queries do not alter the Branding release inventory.
 - Use Vibe task workflows with PHIOON delivery/documentation preferences; retire
